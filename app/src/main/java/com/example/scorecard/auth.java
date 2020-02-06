@@ -27,6 +27,6 @@ public class auth extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    
+
 
 }
