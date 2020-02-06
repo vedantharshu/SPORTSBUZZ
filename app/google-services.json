@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "859025250081",
+    "firebase_url": "https://scorecard-a9c3f.firebaseio.com",
+    "project_id": "scorecard-a9c3f",
+    "storage_bucket": "scorecard-a9c3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859025250081:android:9d383d0973f131d43f5060",
+        "android_client_info": {
+          "package_name": "com.example.scorecard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "859025250081-bharvk1reeg1lal62p22uujj2rs9nn14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.scorecard",
+            "certificate_hash": "ad97b848fde9d805e08a4c3f8120012876faeea9"
+          }
+        },
+        {
+          "client_id": "859025250081-vrnlfv47nis5ocgpvb5ktnlvutsh2bj7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIOWVGpMAhOW-cT_lDhFGMmG8s0Uq8RsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "859025250081-vrnlfv47nis5ocgpvb5ktnlvutsh2bj7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

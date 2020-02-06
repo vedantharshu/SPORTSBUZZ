@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth"
+    android:background="@drawable/rect">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="250dp"
+        android:hint="Username"
+        android:id="@+id/unmae"
+        android:drawableLeft="@drawable/ic_action_uname1"
+        android:layout_marginRight="15dp"
+        android:autofillHints=""
+        android:inputType="text" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_below="@id/unmae"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:hint="Password"
+        android:drawableLeft="@drawable/ic_action_lock1"
+        android:id="@+id/pwd"
+        android:layout_marginRight="15dp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:text="@string/submit"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_below="@id/pwd"
+        android:layout_marginTop="30dp"/>
+
+</RelativeLayout>

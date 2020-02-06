@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/bangers</item>
+        <item>@font/bilbo_swash_caps</item>
+        <item>@font/black_ops_one</item>
+        <item>@font/leckerli_one</item>
+    </array>
+</resources>

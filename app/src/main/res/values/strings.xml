@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SCORECARD</string>
+    <string name="let_s_begin"><u>Check The Score</u></string>
+    <string name="cricket">Cricket</string>
+    <string name="lawn_tennis">Lawn Tennis</string>
+    <string name="badminton">Badminton</string>
+    <string name="table_tennis">Table Tennis</string>
+    <string name="volley_ball">Volley Ball</string>
+    <string name="football">Football</string>
+    <string name="name">parag</string>
+    <string name="enter_team_names">ENTER TEAM NAMES</string>
+    <string name="team_2">Team 2</string>
+    <string name="vs">VS</string>
+    <string name="team_1">Team 1</string>
+    <string name="enter_overs">ENTER OVERS</string>
+    <string name="number_of_overs_to_be_bowled">Number of overs to be bowled</string>
+    <string name="submit">SUBMIT</string>
+    <string name="toss">CHOOSE TEAM BATTING FIRST</string>
+    <string name="initial">0</string>
+    <string name="_1">1</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="wide_ball">WIDE BALL</string>
+    <string name="noball">NO BALL</string>
+    <string name="final_score">Final Score!!</string>
+    <string name="dot">.</string>
+    <string name="_4">4</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="overs">Overs:</string>
+    <string name="slash">/</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="submit">SUBMIT</string>
+</resources>
