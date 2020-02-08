@@ -4,41 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth"
-    android:background="@drawable/rect">
+    tools:context=".Auth">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="250dp"
-        android:hint="Username"
-        android:id="@+id/unmae"
-        android:drawableLeft="@drawable/ic_action_uname1"
-        android:layout_marginRight="15dp"
-        android:autofillHints=""
-        android:inputType="text" />
+        android:id="@+id/welcome"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="80dp"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:fontFamily="@font/bangers"/>
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
+        android:layout_below="@+id/input_email"
+        android:id="@+id/input_password"
         android:layout_width="match_parent"
-        android:layout_below="@id/unmae"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:ems="10"
         android:hint="Password"
-        android:drawableLeft="@drawable/ic_action_lock1"
-        android:id="@+id/pwd"
-        android:layout_marginRight="15dp"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_email" />
 
     <Button
+        android:id="@+id/login_btn"
+        android:layout_below="@+id/input_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/submit"
-        android:text="@string/submit"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_below="@id/pwd"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:text="Login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_password" />
+
+    <TextView
+        android:id="@+id/signup_btn_on_login"
+        android:layout_width="match_parent"
+        android:layout_below="@id/login_btn"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:text="New User? Sign Up Here"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn" />
+
+    <TextView
+        android:layout_below="@+id/signup_btn_on_login"
+        android:id="@+id/forgot_password_on_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="15dp"
+        android:text="Forgot Password?"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signup_btn_on_login" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/cr" />
+
 
 </RelativeLayout>

@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Cricket extends AppCompatActivity {
     EditText et1;
     EditText et2;
@@ -24,8 +26,8 @@ public class Cricket extends AppCompatActivity {
         et2=(EditText)findViewById(R.id.et2);
         et3=(EditText)findViewById(R.id.et3);
         bt=(Button)findViewById(R.id.bt);
-        final String[] st={et1.getText().toString().trim(),et2.getText().toString().trim(),et3.getText().toString().trim()};
 
+        final String[] st={et1.getText().toString().trim(),et2.getText().toString().trim(),et3.getText().toString().trim()};
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +26,7 @@ public class CricketScore extends AppCompatActivity {
 
     DatabaseReference mref;
 
-
+    LinearLayout toss;
 
     String s="",ss="",runs1="",wickets1="",st="",alternate="",current="",runs2="",wickets2="";
 
@@ -48,6 +49,7 @@ public class CricketScore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cricket_score);
 
+        toss=(LinearLayout)findViewById(R.id.ll);
         t1=(TextView)findViewById(R.id.t1);
         tv2=(TextView)findViewById(R.id.tv2);
         wkt=(TextView)findViewById(R.id.wkt);
@@ -191,6 +193,7 @@ public class CricketScore extends AppCompatActivity {
 
 public void wicket()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -257,6 +260,7 @@ public void wicket()
 }
     public void zero()
     {
+        toss.setVisibility(View.INVISIBLE);
         if(cb1.isChecked()==false&&cb2.isChecked()==false)
         {
             Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -334,6 +338,7 @@ public void wicket()
     }
 public void one()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -411,6 +416,7 @@ public void one()
 }
 public void two()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -488,6 +494,7 @@ public void two()
 }
 public void three()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -564,6 +571,7 @@ public void three()
 }
 public void four()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -641,6 +649,7 @@ public void four()
 }
 public void five()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -717,6 +726,7 @@ public void five()
 }
 public void six()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -793,6 +803,7 @@ public void six()
 }
 public void wide()
 {
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -829,7 +840,7 @@ public void wide()
 }
 public void noball()
 {
-
+    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
