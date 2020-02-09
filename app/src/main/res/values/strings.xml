@@ -31,4 +31,5 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="submit">SUBMIT</string>
+    <string name="play">PLAY</string>
 </resources>
