@@ -3,13 +3,17 @@ package com.example.scorecard;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Sports_User extends AppCompatActivity {
 
-    ImageView cricket,badminton,football,basketball,tennis,volleyball;
+    ImageView cricket,badminton,football,basketball,tennis,volleyball,admin;
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +24,9 @@ public class Sports_User extends AppCompatActivity {
         basketball=(ImageView)findViewById(R.id.imageView4);
         tennis=(ImageView)findViewById(R.id.imageView5);
         volleyball=(ImageView)findViewById(R.id.imageView6);
+        admin=(ImageView)findViewById(R.id.admin);
+
+        mAuth=FirebaseAuth.getInstance();
 
         cricket.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,9 +66,16 @@ public class Sports_User extends AppCompatActivity {
         volleyball.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent vb=new Intent(Sports_User.this,VolleyballUser.class);
+                mAuth.signOut();
+                Intent vb=new Intent(Sports_User.this,MainActivity.class);
                 startActivity(vb);
+            }
+        });
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Sports_User.this,Sports.class);
+                startActivity(intent);
             }
         });
     }

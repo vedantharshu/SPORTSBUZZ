@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".football_score"></activity>
-        <activity android:name=".Main2Activity" />
         <activity android:name=".Auth" />
         <activity android:name=".VolleyballUser" />
         <activity android:name=".TennisUser" />

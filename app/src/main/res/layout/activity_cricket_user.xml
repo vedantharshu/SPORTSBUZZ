@@ -9,16 +9,22 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:textSize="30sp"
-        android:id="@+id/t1"/>
+        android:textSize="15sp"
+        android:id="@+id/t1"
+        android:fontFamily="@font/bangers"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_below="@+id/t1"
-        android:textSize="30sp"
-        android:layout_marginTop="20dp"
+        android:fontFamily="@font/bangers"
+        android:textSize="15sp"
         android:id="@+id/t2"/>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/t2"
+        android:id="@+id/matchListView"
+        android:layout_marginTop="10dp"/>
+
 </RelativeLayout>

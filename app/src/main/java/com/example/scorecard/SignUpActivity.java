@@ -17,19 +17,24 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
     EditText user_email,user_password,user_name;
     TextView login_btn_on_signup;
     Button signup_btn;
+    String uname,name,pwd;
     private FirebaseAuth mAuth;
     private FirebaseUser user;
-
+    DatabaseReference mref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        mref= FirebaseDatabase.getInstance().getReference("Users");
 
         user_email = (EditText)findViewById(R.id.user_email);
         user_password = (EditText)findViewById(R.id.user_password);
@@ -66,6 +71,9 @@ public class SignUpActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
         else {
+            uname=user_email.getText().toString().trim();
+            pwd=user_password.getText().toString().trim();
+            name=user_name.getText().toString().trim();
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -95,6 +103,8 @@ public class SignUpActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
+                            User ob=new User(uname,pwd);
+                            mref.child(name).setValue(ob);
                             Toast.makeText(SignUpActivity.this,"Email verification sent on\n"+user_email.getText().toString(),Toast.LENGTH_LONG).show();
                             mAuth.signOut();
                             startActivity(new Intent(SignUpActivity.this,Auth.class));

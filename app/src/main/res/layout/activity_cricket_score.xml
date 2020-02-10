@@ -374,5 +374,6 @@
         android:layout_marginTop="20dp"
         android:layout_below="@+id/finall"
         android:fontFamily="@font/bangers"
+        android:clickable="true"
         />
 </RelativeLayout>

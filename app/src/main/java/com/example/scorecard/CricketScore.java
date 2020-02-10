@@ -24,11 +24,11 @@ public class CricketScore extends AppCompatActivity {
 
     Button one,two,three,four,five,six,wide,noball,wicket,zero;
 
-    DatabaseReference mref;
+    DatabaseReference mref,newref;
 
     LinearLayout toss;
 
-    String s="",ss="",runs1="",wickets1="",st="",alternate="",current="",runs2="",wickets2="";
+    String s="",ss="",runs1="",wickets1="",st="",alternate="",current="",runs2="",wickets2="",id,game="Current";
 
     boolean flag=false,isCheck=false;
 
@@ -74,6 +74,8 @@ public class CricketScore extends AppCompatActivity {
         summary=(TextView)findViewById(R.id.summary);
 
         mref= FirebaseDatabase.getInstance().getReference("Cricket");
+        newref=FirebaseDatabase.getInstance().getReference("CricketCurrent");
+        id=mref.getKey().toString();
 
         Intent intent=getIntent();
         ss=intent.getStringExtra("team1");
@@ -193,7 +195,6 @@ public class CricketScore extends AppCompatActivity {
 
 public void wicket()
 {
-    toss.setVisibility(View.INVISIBLE);
     if(cb1.isChecked()==false&&cb2.isChecked()==false)
     {
         Toast t=Toast.makeText(getApplicationContext(),"Pleaase Choose The Team Batting First",Toast.LENGTH_LONG);
@@ -236,8 +237,9 @@ public void wicket()
             runs2 = Integer.toString(runs);
             wickets2=Integer.toString(wkts);
             runs2 = alternate + ":" + runs2 + "/" + wickets2;
-            if(wkts==10&&runs<target)
-                btn.setText("Team "+current+" WON");
+            if(wkts==10&&runs<target) {
+                btn.setText("Team " + current + " WON");
+            }
         }
         inningsOver+=1;
         if(inningsOver==2)
@@ -256,7 +258,7 @@ public void wicket()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
     public void zero()
     {
@@ -334,7 +336,7 @@ public void wicket()
         }
         Matches ob=new Matches(runs1,runs2);
 
-        mref.child("vipss").setValue(ob);
+        newref.setValue(ob);
     }
 public void one()
 {
@@ -412,7 +414,7 @@ public void one()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void two()
 {
@@ -490,7 +492,7 @@ public void two()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void three()
 {
@@ -567,7 +569,7 @@ public void three()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void four()
 {
@@ -645,7 +647,7 @@ public void four()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void five()
 {
@@ -722,7 +724,7 @@ public void five()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void six()
 {
@@ -772,9 +774,8 @@ public void six()
             runs2 = Integer.toString(runs);
             wickets2=Integer.toString(wkts);
             runs2 = alternate + ":" + runs2 + "/" + wickets2;
-            if(runs>target)
-            {
-                btn.setText("TEAM "+alternate+" WON");
+            if(runs>target) {
+                btn.setText("TEAM " + alternate + " WON");
             }
             else
             {
@@ -799,7 +800,7 @@ public void six()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void wide()
 {
@@ -836,7 +837,7 @@ public void wide()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void noball()
 {
@@ -873,12 +874,21 @@ public void noball()
     }
     Matches ob=new Matches(runs1,runs2);
 
-    mref.child("vipss").setValue(ob);
+    newref.setValue(ob);
 }
 public void end(String scores,String fow)
 {
-    Matches ob=new Matches(scores,fow);
+    new AlertDialog.Builder(this).setTitle("MATCH FINISHED").setMessage("SAVING THE MATCH DATA").setNegativeButton("",null).setPositiveButton("OK, Continue", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            startActivity(new Intent(CricketScore.this,Sports_User.class));
+        }
+    }).create().show();
 
-        mref.child("vipss").setValue(ob);
+    String reset1=" ",reset2=" ";
+    Matches ob=new Matches(scores,fow);
+    Matches ob1=new Matches(reset1,reset2);
+        newref.setValue(ob1);
+        mref.push().setValue(ob);
 }
 }
